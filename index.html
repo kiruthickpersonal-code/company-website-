@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanguard Precision Dynamics | Precision-Engineered Components</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #001d36;
+    --ink: #0e1c2f;
+    --steel: #426086;
+    --body: #44474c;
+    --muted: #77849c;
+    --mist: #eef4ff;
+    --mist-2: #e5eeff;
+    --sky: #acc7ff;
+    --pale: #dbe9ff;
+    --line: #d5dfef;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.1);
+    --shadow-lg: 0 20px 25px rgba(0,0,0,.1);
+    --font-head: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--body);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy); line-height: 1.15; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 80px 0; position: relative; }
+  .section-tight { padding: 64px 0; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--steel);
+    background: var(--mist-2);
+    border-radius: 2px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+  .lead { font-size: 16px; color: var(--body); max-width: 680px; }
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--steel);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s, color .2s;
+  }
+  .link:hover { color: var(--navy); border-color: var(--navy); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    padding: 0 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s, box-shadow .2s;
+  }
+  .btn-primary { background: var(--navy); color: var(--white); box-shadow: var(--shadow-md); }
+  .btn-primary:hover { background: var(--steel); }
+  .btn-outline { background: var(--white); color: var(--navy); border-color: var(--line); }
+  .btn-outline:hover { border-color: var(--steel); color: var(--steel); }
+
+  .icon { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .icon-box {
+    width: 48px; height: 48px;
+    display: grid; place-items: center;
+    background: var(--mist-2);
+    color: var(--steel);
+    border-radius: 4px;
+  }
+
+  /* Visual placeholders for the design's photography */
+  .visual {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(0,29,54,.92) 0%, rgba(66,96,134,.78) 60%, rgba(172,199,255,.55) 100%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 28px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 28px);
+    background-color: var(--navy);
+    border-radius: 4px;
+  }
+
+  /* ---------- Top utility bar ---------- */
+  .topbar { background: var(--mist); border-bottom: 1px solid var(--line); }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 36px; gap: 16px; flex-wrap: wrap; }
+  .topbar .group { display: flex; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; color: var(--muted); }
+  .topbar .group span { display: inline-flex; align-items: center; gap: 8px; }
+  .topbar .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--steel); display: inline-block; }
+  .topbar .sep { width: 1px; height: 12px; background: var(--line); }
+  .topbar .links { display: flex; align-items: center; gap: 20px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .topbar .links a:hover { color: var(--navy); }
+
+  /* ---------- Main header ---------- */
+  .header { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+  .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    border-radius: 4px;
+    display: grid; place-items: center;
+    color: var(--sky);
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1; }
+  .brand-text strong { font-family: var(--font-head); font-size: 16px; font-weight: 800; color: var(--navy); letter-spacing: .02em; }
+  .brand-text small { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: var(--steel); margin-top: 4px; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--body);
+    padding: 28px 0;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .nav a:hover, .nav a.active { color: var(--navy); border-color: var(--navy); }
+  .header-cta { display: flex; align-items: center; gap: 12px; }
+  .menu-toggle { display: none; background: none; border: 0; cursor: pointer; color: var(--navy); }
+
+  /* ---------- Hero ---------- */
+  .hero { background: var(--mist); overflow: hidden; }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(0deg, rgba(66,96,134,.06) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(90deg, rgba(66,96,134,.06) 0 1px, transparent 1px 40px);
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding-top: 80px; padding-bottom: 80px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+  .badge .pulse { width: 8px; height: 8px; background: var(--steel); border-radius: 50%; }
+  .hero h1 { font-size: 56px; font-weight: 800; letter-spacing: -.02em; margin: 24px 0 20px; }
+  .hero .lead { margin-bottom: 32px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+  .hero-actions .btn { min-width: 286px; }
+  .specs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  .spec {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--white); border: 1px solid var(--line);
+    padding: 6px 14px; border-radius: 2px; font-size: 13px; font-weight: 500; color: var(--navy);
+  }
+  .spec svg { color: var(--steel); }
+  .hero-visual { position: relative; height: 336px; }
+  .hero-visual .visual { position: absolute; inset: 0; box-shadow: var(--shadow-lg); }
+  .hero-visual .visual::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,29,54,.7));
+  }
+  .overlay-card {
+    position: absolute; z-index: 2;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow-lg);
+  }
+  .overlay-card .head { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .06em; color: var(--steel); text-transform: uppercase; }
+  .overlay-card p { font-size: 13px; color: var(--navy); font-weight: 600; margin-top: 8px; }
+  .overlay-card.top-right { top: 16px; right: 16px; width: 175px; }
+  .overlay-card.bottom-left { bottom: 16px; left: 16px; width: 192px; }
+  .overlay-card .metric { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 8px; }
+  .overlay-card .sub { font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- Overview ---------- */
+  .overview-head { max-width: 768px; }
+  .overview-head h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin: 16px 0; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid var(--line); }
+  .pillar { padding: 32px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 16px; background: var(--white); }
+  .pillar:last-child { border-right: 0; }
+  .pillar h3 { font-size: 22px; font-weight: 700; }
+  .pillar p { font-size: 14px; }
+  .pillar .foot { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+  .overview-support { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 80px; }
+  .overview-support h4 { font-size: 30px; font-weight: 800; margin: 14px 0 16px; }
+  .overview-support .visual { height: 192px; }
+  .overview-support .actions { margin-top: 24px; }
+
+  /* ---------- Products ---------- */
+  .products { background: var(--mist); }
+  .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+  .section-head h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin-top: 16px; max-width: 760px; }
+  .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .product-card .visual { height: 176px; border-radius: 0; }
+  .product-card .body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .product-card h3 { font-size: 20px; font-weight: 700; }
+  .product-card p { font-size: 14px; }
+  .product-card .foot { padding: 0 24px 24px; }
+  .product-card .eyebrow { color: var(--steel); }
+
+  /* ---------- Industries ---------- */
+  .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+  .industry {
+    border: 1px solid var(--line); border-radius: 4px; padding: 32px;
+    display: flex; flex-direction: column; gap: 14px; background: var(--white);
+    transition: box-shadow .25s;
+  }
+  .industry:hover { box-shadow: var(--shadow-md); }
+  .industry-top { display: flex; justify-content: space-between; align-items: center; }
+  .industry h3 { font-size: 22px; font-weight: 700; }
+  .industry > p { font-size: 14px; }
+  .industry ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .industry li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--navy); font-weight: 500; }
+  .industry li svg { color: var(--steel); }
+  .industry .link { margin-top: auto; padding-top: 12px; }
+  .industry.wide { grid-column: span 2; display: grid; grid-template-columns: 1fr; }
+  .industry.wide .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .industries-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
+  .industries-intro h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin-top: 16px; }
+  .industries-intro p { max-width: 560px; }
+
+  /* ---------- Capabilities ---------- */
+  .capabilities { background: var(--white); }
+  .cap-intro { max-width: 760px; }
+  .cap-intro h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin: 16px 0; }
+  .cap-row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 64px; }
+  .cap-row + .cap-row { margin-top: 72px; }
+  .cap-row.reverse .cap-media { order: 2; }
+  .cap-media .visual { height: 320px; }
+  .cap-copy .eyebrow { color: var(--steel); }
+  .cap-copy h3 { font-size: 28px; font-weight: 700; margin: 12px 0 16px; }
+  .cap-copy p { margin-bottom: 24px; }
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .spec-box { background: var(--mist); border-radius: 4px; padding: 16px 20px; }
+  .spec-box .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .spec-box .v { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 6px; }
+  .materials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .materials span { background: var(--mist-2); color: var(--navy); font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 2px; }
+  .cap-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 64px; }
+  .cap-card { background: var(--mist); border-radius: 4px; padding: 32px; box-shadow: var(--shadow-sm); }
+  .cap-card h4 { font-size: 22px; font-weight: 700; margin: 16px 0 12px; }
+  .cap-card .kpi-row { display: flex; gap: 12px; margin-top: 20px; }
+  .kpi { flex: 1; background: var(--white); border-radius: 4px; padding: 16px; }
+  .kpi .k { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+  .kpi .v { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--navy); margin-top: 4px; }
+
+  /* ---------- Metrics band ---------- */
+  .metrics { background: var(--navy); color: var(--white); }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .metric { padding: 32px 24px; border-right: 1px solid rgba(172,199,255,.2); }
+  .metric:last-child { border-right: 0; }
+  .metric .eyebrow { color: var(--sky); }
+  .metric .num { font-family: var(--font-head); font-size: 56px; font-weight: 800; color: var(--white); margin: 12px 0 10px; line-height: 1; }
+  .metric p { font-size: 13px; color: rgba(255,255,255,.7); }
+
+  /* ---------- Industries served (secondary grid) ---------- */
+  .served { background: var(--mist); }
+  .served-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+  .served-card { background: var(--white); border-radius: 4px; padding: 32px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 16px; }
+  .served-card h3 { font-size: 22px; font-weight: 700; }
+  .served-card p { font-size: 14px; }
+  .served-card ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .served-card li { background: var(--mist-2); color: var(--navy); font-size: 13px; padding: 6px 12px; border-radius: 2px; }
+
+  /* ---------- Quality ---------- */
+  .quality { background: var(--white); }
+  .quality-intro { max-width: 760px; }
+  .quality-intro h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin: 16px 0; }
+  .cert-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
+  .cert { border: 1px solid var(--line); border-radius: 4px; padding: 24px 16px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; box-shadow: var(--shadow-sm); }
+  .cert .seal { width: 48px; height: 48px; border-radius: 50%; background: var(--mist-2); color: var(--steel); display: grid; place-items: center; }
+  .cert h4 { font-size: 16px; font-weight: 700; }
+  .cert p { font-size: 12px; color: var(--muted); }
+  .cert .tag { margin-top: auto; }
+  .protocol { margin-top: 80px; }
+  .protocol h3 { font-size: 28px; font-weight: 700; margin-bottom: 32px; }
+  .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+  .stage { background: var(--mist); border-radius: 4px; padding: 24px; position: relative; min-height: 228px; display: flex; flex-direction: column; gap: 12px; }
+  .stage .num { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--steel); letter-spacing: .08em; }
+  .stage h4 { font-size: 18px; font-weight: 700; }
+  .stage p { font-size: 13px; }
+
+  /* ---------- Case study ---------- */
+  .case { background: var(--mist); }
+  .case-card { background: var(--white); border-radius: 4px; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; }
+  .case-side { padding: 40px; background: var(--white); display: flex; flex-direction: column; gap: 16px; }
+  .case-side h3 { font-size: 26px; font-weight: 800; }
+  .case-side .visual { height: 200px; margin-top: auto; }
+  .case-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .case-stat { background: var(--mist); border-radius: 4px; padding: 16px; }
+  .case-stat .k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .case-stat .v { font-family: var(--font-head); font-size: 26px; font-weight: 800; color: var(--navy); margin-top: 6px; }
+  .case-body { padding: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .case-body h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--steel); text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+  .case-body p { font-size: 14px; }
+  .outcome { background: var(--navy); color: var(--white); padding: 24px; border-radius: 4px; }
+  .outcome h4 { color: var(--sky); }
+  .outcome p { color: rgba(255,255,255,.85); }
+  .case-foot { padding: 0 40px 40px; }
+
+  /* ---------- Careers & news ---------- */
+  .careers { background: var(--white); }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .split > div { padding: 40px; }
+  .split .left { border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 16px; }
+  .split .right { display: flex; flex-direction: column; gap: 16px; background: var(--mist); }
+  .split h3 { font-size: 30px; font-weight: 800; }
+  .role-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .role {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 20px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .role:hover { border-color: var(--steel); box-shadow: var(--shadow-sm); }
+  .role h5 { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); }
+  .role small { font-size: 12px; color: var(--muted); }
+  .news-item { background: var(--white); border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-sm); }
+  .news-item .date { font-family: var(--font-mono); font-size: 11px; color: var(--steel); letter-spacing: .04em; text-transform: uppercase; }
+  .news-item h4 { font-size: 18px; font-weight: 700; }
+  .news-item p { font-size: 14px; }
+
+  /* ---------- Quote form ---------- */
+  .quote { background: var(--mist); }
+  .quote-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+  .quote-context h2 { font-size: 40px; font-weight: 800; letter-spacing: -.01em; margin: 16px 0 16px; }
+  .quote-context > p { margin-bottom: 32px; }
+  .assure { display: flex; flex-direction: column; gap: 24px; }
+  .assure-item { display: flex; gap: 16px; align-items: flex-start; }
+  .assure-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .assure-item p { font-size: 14px; }
+  .hotline { margin-top: 40px; background: var(--navy); color: var(--white); border-radius: 4px; padding: 24px; }
+  .hotline .eyebrow { color: var(--sky); }
+  .hotline p { margin-top: 10px; font-size: 14px; color: rgba(255,255,255,.9); }
+  .hotline p a { color: var(--white); font-weight: 600; }
+
+  .quote-form { background: var(--white); border-radius: 4px; box-shadow: var(--shadow-lg); padding: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .quote-form h3 { font-size: 22px; font-weight: 700; }
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--navy); font-weight: 500; }
+  .field label .req { color: var(--steel); }
+  .field input {
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 0 14px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--mist);
+    transition: border-color .2s, box-shadow .2s, background .2s;
+  }
+  .field input::placeholder { color: var(--muted); }
+  .field input:focus { outline: none; border-color: var(--steel); background: var(--white); box-shadow: 0 0 0 3px rgba(66,96,134,.15); }
+  .submit { width: 100%; }
+  .submit:disabled { opacity: .6; cursor: not-allowed; }
+  .form-status { font-size: 14px; min-height: 22px; }
+  .form-status.ok { color: #1f7a4d; font-weight: 600; }
+  .form-status.err { color: #b3261e; font-weight: 600; }
+
+  /* ---------- Footer ---------- */
+  .footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 72px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 40px; }
+  .footer h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); font-weight: 500; margin-bottom: 20px; }
+  .footer .brand strong { color: var(--white); }
+  .footer .brand small { color: var(--sky); }
+  .footer .about { font-size: 14px; margin: 20px 0; max-width: 340px; }
+  .footer .certs { display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid rgba(172,199,255,.2); border-radius: 4px; font-size: 13px; }
+  .footer .certs span { display: flex; align-items: center; gap: 10px; }
+  .footer .certs svg { color: var(--sky); }
+  .footer ul { list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+  .footer ul a:hover { color: var(--white); }
+  .footer address { font-style: normal; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+  .footer .hq-direct { font-size: 14px; }
+  .footer .hq-direct strong { color: var(--white); }
+  .footer-bottom {
+    margin-top: 56px; padding: 24px 0;
+    border-top: 1px solid rgba(172,199,255,.2);
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+    font-size: 13px;
+  }
+  .footer-bottom .legal { display: flex; flex-wrap: wrap; gap: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; }
+  .footer-bottom .legal a:hover { color: var(--white); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1080px) {
+    .nav { display: none; }
+    .menu-toggle { display: inline-flex; }
+    .nav.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--white); padding: 12px 24px 24px; border-bottom: 1px solid var(--line); gap: 0; }
+    .nav.open a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .header-cta .btn { display: none; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .metric:nth-child(2) { border-right: 0; }
+    .metric:nth-child(-n+2) { border-bottom: 1px solid rgba(172,199,255,.2); }
+    .stages { grid-template-columns: repeat(2, 1fr); }
+    .cert-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 960px) {
+    .hero .wrap, .overview-support, .cap-row, .quote-grid, .industries-intro, .case-card, .split, .footer-grid, .cap-foot, .served-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 44px; }
+    .hero-visual { height: 300px; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: 0; border-bottom: 1px solid var(--line); }
+    .industry-grid { grid-template-columns: 1fr 1fr; }
+    .industry.wide { grid-column: span 2; }
+    .industry.wide .inner { grid-template-columns: 1fr; }
+    .cap-row.reverse .cap-media { order: 0; }
+    .split .left { border-right: 0; border-bottom: 1px solid var(--line); }
+    .case-stats { grid-template-columns: 1fr; }
+    .section-head h2, .overview-head h2, .cap-intro h2, .quality-intro h2, .quote-context h2, .industries-intro h2 { font-size: 32px; }
+    .footer-grid { gap: 32px; }
+    .topbar .links { display: none; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 18px; }
+    .section { padding: 56px 0; }
+    .hero h1 { font-size: 36px; }
+    .hero-actions .btn { width: 100%; min-width: 0; }
+    .product-grid, .industry-grid, .metrics-grid, .cert-grid, .stages, .field-grid, .spec-grid { grid-template-columns: 1fr; }
+    .industry.wide { grid-column: auto; }
+    .metric { border-right: 0; border-bottom: 1px solid rgba(172,199,255,.2); }
+    .metric:last-child { border-bottom: 0; }
+    .quote-form { padding: 24px; }
+    .case-side, .case-body, .case-foot { padding: 24px; }
+    .split > div { padding: 24px; }
+    .topbar .group span:nth-child(n+2) { display: none; }
+    .brand-text small { display: none; }
+    .section-head h2, .overview-head h2, .cap-intro h2, .quality-intro h2, .quote-context h2, .industries-intro h2 { font-size: 28px; }
+    .overview-support h4, .cap-copy h3 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP UTILITY BAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="group">
+      <span><i class="dot"></i>ISO 9001:2015 &amp; AS9100D CERTIFIED</span>
+      <span class="sep"></span>
+      <span>Sales &amp; Engineering: +1 (800) 492-7200</span>
+      <span class="sep"></span>
+      <span>contact@vanguardprecision.com</span>
+    </div>
+    <div class="links">
+      <a href="#">Investor Relations</a>
+      <a href="#">Client Portal</a>
+      <span>EN (US)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MAIN HEADER ============ -->
+<header class="header" id="top">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="logo-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 18 L12 4 L20 18 Z"/><path d="M9 18 L12 11 L15 18"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>VANGUARD</strong>
+        <small>PRECISION DYNAMICS</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#top" class="active">Home</a>
+      <a href="#overview">About Us</a>
+      <a href="#products">Products &amp; Services</a>
+      <a href="#industries">Industries Served</a>
+      <a href="#capabilities">Capabilities &amp; Facilities</a>
+      <a href="#quality">Resources &amp; Quality</a>
+      <a href="#careers">Careers</a>
+      <a href="#quote">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#quote" class="btn btn-primary">Request a Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero section">
+  <div class="wrap">
+    <div>
+      <span class="badge"><i class="pulse"></i>AS9100D &amp; ISO 9001:2015 CERTIFIED FACILITY • TIER-1 OEM SUPPLIER</span>
+      <h1>Precision-Engineered Components for Mission-Critical Industrial Applications</h1>
+      <p class="lead">We partner with global equipment manufacturers to engineer, machine, and assemble tight-tolerance mechanical assemblies with verified dimensional repeatability, certified metallurgical integrity, and dependable schedule predictability.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-outline">Explore Our Products &amp; Services</a>
+        <a href="#quote" class="btn btn-primary">Request a Production Quote</a>
+      </div>
+      <div class="specs">
+        <span class="spec">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/></svg>
+          Tolerances to ±0.0002" (±5 μm)
+        </span>
+        <span class="spec">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>
+          5-Axis CNC &amp; Swiss Turning
+        </span>
+        <span class="spec">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg>
+          Prototype to 500k+ Annual Volume
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual" role="img" aria-label="Precision machined component"></div>
+      <div class="overlay-card top-right">
+        <div class="head">
+          <svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8"/></svg>
+          CMM VERIFICATION
+        </div>
+        <p>100% In-Line Multi-Sensor Continuous Inspection</p>
+      </div>
+      <div class="overlay-card bottom-left">
+        <div class="head">
+          QUALITY METRIC
+          <span class="tag" style="margin-left:auto">&lt; 15 PPM</span>
+        </div>
+        <div class="metric">&lt; 15 PPM</div>
+        <div class="sub">Zero-Defect PPM Target</div>
+        <div class="sub">AS9100 Rev D Verified Standard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="section" id="overview">
+  <div class="wrap">
+    <div class="overview-head">
+      <span class="eyebrow">OVERVIEW • BUILT ON ENGINEERING DISCIPLINE</span>
+      <h2>Forty Years of Advanced Precision Manufacturing</h2>
+      <p class="lead">Established industrial partner delivering complex mechanical components and sub-assemblies. Scalable contract manufacturing backed by rigorous Lean Six Sigma processes, proprietary machining algorithms, and end-to-end material certification.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon-box">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+        </div>
+        <h3>Advanced Machining &amp; Multi-Axis Milling</h3>
+        <p>Simultaneous 5-axis milling cells capable of sub-micron finishes across geometrically complex prismatic surfaces. High-speed spindle telemetry prevents harmonic tool wear and preserves critical edge tolerances.</p>
+        <div class="foot">CAM Architecture: HyperMill &amp; Mastercam 2024</div>
+      </div>
+      <div class="pillar">
+        <div class="icon-box">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+        </div>
+        <h3>Metallurgical &amp; Surface Engineering</h3>
+        <p>In-house heat treatment verification, Nadcap-accredited chemical conversion, passivation, electropolishing, and hardcoat anodizing for aggressive chemical and thermal operating environments.</p>
+        <div class="foot">Process Spec: ASTM E140 &amp; AMS-QQ-P-35 Compliant</div>
+      </div>
+      <div class="pillar">
+        <div class="icon-box">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        </div>
+        <h3>Validated Sub-Assembly &amp; Testing</h3>
+        <p>Turnkey electromechanical integration in ISO Class 7 cleanrooms. Helium mass spectrometer leak detection, hydrostatic proof testing, and dynamic load calibration before packaging.</p>
+        <div class="foot">Verification: Class 7 Cleanroom • Traceable Serial Numbers</div>
+      </div>
+    </div>
+
+    <div class="overview-support">
+      <div>
+        <span class="eyebrow">LEAN SIX SIGMA MANUFACTURING CORE</span>
+        <h4>Integrated Automated Robotics Cells</h4>
+        <p class="lead">Equipped with Fanuc robotic load-unload cells, automatic tool measurement, and dynamic offset compensation for uncompromised lights-out 24/7 repeatability across runs exceeding 500,000 units annually.</p>
+        <div class="actions">
+          <a href="#capabilities" class="link">Learn More About Our Company →</a>
+        </div>
+      </div>
+      <div class="visual" style="height:192px" role="img" aria-label="Automated robotics cell"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">PRODUCTS &amp; SERVICES</span>
+        <h2>Custom Machined Components &amp; Turnkey Assembly Solutions</h2>
+      </div>
+      <span class="tag">CAPABILITY ARCHITECTURE v4.2</span>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="visual" role="img" aria-label="5-axis milling"></div>
+        <div class="body">
+          <span class="eyebrow">MILLING • TURNING</span>
+          <h3>High-Precision CNC Milling &amp; Turning</h3>
+          <p>Prismatic components, multi-faceted complex geometries, and exotic alloys including Inconel 718, Titanium Gr. 5, Monel, and 316L Stainless Steel.</p>
+        </div>
+        <div class="foot"><a href="#capabilities" class="link">View Technical Specs →</a></div>
+      </article>
+
+      <article class="product-card">
+        <div class="visual" role="img" aria-label="Swiss micro-machining"></div>
+        <div class="body">
+          <span class="eyebrow">MICRO-SCALE MACHINING</span>
+          <h3>Swiss Micro-Machining</h3>
+          <p>Sub-millimeter miniature pins, fluidic valves, micro-nozzles, and tight-tolerance fittings down to ∅0.1 mm diameter with micro-deburred transitions.</p>
+        </div>
+        <div class="foot"><a href="#capabilities" class="link">View Details →</a></div>
+      </article>
+
+      <article class="product-card">
+        <div class="visual" role="img" aria-label="Electromechanical sub-assembly"></div>
+        <div class="body">
+          <span class="eyebrow">FULL INTEGRATION</span>
+          <h3>Electromechanical Sub-Assemblies</h3>
+          <p>Complete clean-room integration, sensor packaging, wire harnessing, dynamic torque verification, and calibrated helium pressure testing.</p>
+        </div>
+        <div class="foot"><a href="#capabilities" class="link">View Details →</a></div>
+      </article>
+
+      <article class="product-card">
+        <div class="visual" role="img" aria-label="Sheet metal enclosure"></div>
+        <div class="body">
+          <span class="eyebrow">STRUCTURAL ENCLOSURES</span>
+          <h3>Sheet Metal &amp; Structural Enclosures</h3>
+          <p>Fiber laser cutting, automated multi-axis press brake forming, certified robotic TIG/MIG welding, and EMI/RFI shielding gasket installation.</p>
+        </div>
+        <div class="foot"><a href="#capabilities" class="link">View Details →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section" id="industries">
+  <div class="wrap">
+    <div class="industries-intro">
+      <div>
+        <span class="eyebrow">INDUSTRIES SERVED</span>
+        <h2>Engineered for Environments Where Failure Is Not an Option</h2>
+      </div>
+      <p class="lead">Critical components deployed across flight decks, deepwater drilling arrays, semiconductor fabrication foundries, and sterile surgical suites.</p>
+    </div>
+
+    <div class="industry-grid">
+      <article class="industry">
+        <div class="industry-top">
+          <svg class="icon" viewBox="0 0 24 24" style="color:var(--steel)"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <span class="tag">AS9100D • ITAR</span>
+        </div>
+        <h3>Aerospace &amp; Defense</h3>
+        <p>Primary flight control actuation brackets, APU housing modules, fuel distribution manifolds, and structural airframe titanium hardpoints.</p>
+        <ul>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Hydraulic manifold block integrity</li>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Flight-safety critical FAI documentation</li>
+        </ul>
+        <a href="#quality" class="link">View Aerospace Case Studies →</a>
+      </article>
+
+      <article class="industry">
+        <div class="industry-top">
+          <svg class="icon" viewBox="0 0 24 24" style="color:var(--steel)"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="8"/></svg>
+          <span class="tag">ISO 13485 ALIGNED</span>
+        </div>
+        <h3>Medical Devices &amp; Surgical</h3>
+        <p>Titanium orthopedic implants, robotic surgical articulators, minimally invasive trocar housings, and autoclavable endoscopic shafts.</p>
+        <ul>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Electropolished biocompatible surfaces</li>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Bioburden-controlled ultrasonic cleaning</li>
+        </ul>
+        <a href="#quality" class="link">View Medical Specifications →</a>
+      </article>
+
+      <article class="industry">
+        <div class="industry-top">
+          <svg class="icon" viewBox="0 0 24 24" style="color:var(--steel)"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+          <span class="tag">NACE MR0175</span>
+        </div>
+        <h3>Energy &amp; Power Generation</h3>
+        <p>High-pressure subsea control pods, turbine flow nozzles, nuclear steam valve stems, and hydrogen cryogenic seals.</p>
+        <ul>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Sulfur-stress cracking resistant alloys</li>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Hydrostatic testing to 25,000 PSI</li>
+        </ul>
+        <a href="#capabilities" class="link">View Energy Capabilities →</a>
+      </article>
+
+      <article class="industry">
+        <div class="industry-top">
+          <svg class="icon" viewBox="0 0 24 24" style="color:var(--steel)"><rect x="5" y="5" width="14" height="14" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+          <span class="tag">UHP CLEANLINESS</span>
+        </div>
+        <h3>Semiconductor Equipment</h3>
+        <p>Ultra-high-purity (UHP) gas delivery blocks, vacuum chamber liners, wafer transport chuck mounts, and ceramic insulator brackets.</p>
+        <ul>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Ra &lt; 0.1 μm surface roughness</li>
+          <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Helium leak rate &lt; 1×10⁻⁹ atm·cc/s</li>
+        </ul>
+        <a href="#capabilities" class="link">View Semi Solutions →</a>
+      </article>
+
+      <article class="industry wide">
+        <div class="inner">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="industry-top">
+              <svg class="icon" viewBox="0 0 24 24" style="color:var(--steel)"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+              <span class="tag">ISO 9001:2015</span>
+            </div>
+            <h3>Industrial Automation &amp; Robotics</h3>
+            <p>High-torque robotic joint housings, zero-backlash harmonic drive adapters, lightweight carbon-fiber and aluminum end-effectors, and cycloidal gear carriers.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;justify-content:flex-end">
+            <ul>
+              <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>High strength-to-weight optimization</li>
+              <li><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Coordinate measuring validation</li>
+            </ul>
+            <a href="#capabilities" class="link">View Robotics Datasheets →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="section capabilities" id="capabilities">
+  <div class="wrap">
+    <div class="cap-intro">
+      <span class="eyebrow">MANUFACTURING CAPABILITIES &amp; ENGINEERING CAPACITY</span>
+      <h2>Precision Machinery Matched with Rigorous Metrology</h2>
+      <p class="lead">Our Huntsville headquarters hosts 110+ high-precision CNC spindle units configured into flexible manufacturing cells that run continuous production cycles.</p>
+    </div>
+
+    <div class="cap-row">
+      <div class="cap-copy">
+        <span class="eyebrow">CAPABILITY: 01</span>
+        <h3>5-Axis Simultaneous Machining Centers</h3>
+        <p>Equipped with DMG MORI, Mori Seiki NMV, and Mazak Variaxis 5-axis simultaneous machines. High-pressure through-spindle cooling (1,000 PSI) allows aggressive material removal while sustaining micro-inch concentricity and perpendicularity tolerances.</p>
+        <div class="spec-grid">
+          <div class="spec-box"><div class="k">Max Envelope</div><div class="v">1,250 × 1,000 × 1,000 mm</div></div>
+          <div class="spec-box"><div class="k">Positioning Accuracy</div><div class="v">±0.0025 mm (±0.0001")</div></div>
+        </div>
+      </div>
+      <div class="cap-media"><div class="visual" role="img" aria-label="5-axis machining center"></div></div>
+    </div>
+
+    <div class="cap-row reverse">
+      <div class="cap-media"><div class="visual" role="img" aria-label="Metrology laboratory"></div></div>
+      <div class="cap-copy">
+        <span class="eyebrow">CAPABILITY: 02</span>
+        <h3>Metrology &amp; Quality Control Laboratory</h3>
+        <p>Environment-controlled quality inspection suite kept at 20°C ±0.5°C. Certified Zeiss Prismo and Accura CMMs with optical scanning probes, Taylor Hobson surface roughness profilometers, and Keyence optical comparators.</p>
+        <div class="spec-grid">
+          <div class="spec-box"><div class="k">CMM Volumetric Length</div><div class="v">E0, MPE: 0.9 + L/350 μm</div></div>
+          <div class="spec-box"><div class="k">Surface Roughness</div><div class="v">Ra 0.05 μm Resolution</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-foot">
+      <div class="cap-card">
+        <span class="eyebrow">MATERIALS COMPETENCY</span>
+        <h4>Materials Competency</h4>
+        <p>Comprehensive machining proficiency in exotic alloys and engineering plastics with validated chip-breaking and heat dispersion parameters:</p>
+        <div class="materials">
+          <span>Titanium Gr. 5 (Ti-6Al-4V)</span>
+          <span>Inconel 718 &amp; 625</span>
+          <span>Hastelloy C-276</span>
+          <span>17-4 PH Stainless</span>
+          <span>Aerospace Al 7075-T6</span>
+          <span>PEEK (Medical &amp; Industrial)</span>
+          <span>Delrin / Acetal</span>
+        </div>
+      </div>
+      <div class="cap-card">
+        <span class="eyebrow">CAPACITY &amp; AGILITY</span>
+        <h4>Production Capacity &amp; Agility</h4>
+        <p>Lights-out automated multi-pallet cells facilitate concurrent setups without machine downtime, supporting high-mix, low-volume (HMLV) orders alongside high-volume annual contracts.</p>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k">Shift Capacity</div><div class="v">24/7 Operations</div></div>
+          <div class="kpi"><div class="k">Lead Times</div><div class="v">Rapid Run &lt; 10 Days</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METRICS BAND ============ -->
+<section class="metrics">
+  <div class="wrap">
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="eyebrow">PHYSICAL CAPACITY</div>
+        <div class="num">280,000</div>
+        <p>Sq. Ft. across 4 Advanced Facilities in Huntsville &amp; Phoenix</p>
+      </div>
+      <div class="metric">
+        <div class="eyebrow">ACTIVE SPINDLES</div>
+        <div class="num">110+</div>
+        <p>Multi-Axis CNC Milling, Swiss, &amp; Turn-Mill Production Centers</p>
+      </div>
+      <div class="metric">
+        <div class="eyebrow">ON-TIME DELIVERY</div>
+        <div class="num">99.7%</div>
+        <p>Rolling 12-Month Average Delivery Performance Metric</p>
+      </div>
+      <div class="metric">
+        <div class="eyebrow">INDUSTRIAL HERITAGE</div>
+        <div class="num">40+</div>
+        <p>Years of Continuous Precision Engineering Excellence (Est. 1984)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIALS & AGILITY / SERVED ============ -->
+<section class="section served">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">MATERIALS &amp; AGILITY</span>
+        <h2>Engineered for Environments Where Failure Is Not an Option</h2>
+      </div>
+    </div>
+    <div class="served-grid">
+      <div class="served-card">
+        <h3>Materials Competency</h3>
+        <p>Comprehensive machining proficiency in exotic alloys and engineering plastics with validated chip-breaking and heat dispersion parameters:</p>
+        <ul>
+          <li>Titanium Gr. 5 (Ti-6Al-4V)</li><li>Inconel 718 &amp; 625</li><li>Hastelloy C-276</li>
+          <li>17-4 PH Stainless</li><li>Aerospace Al 7075-T6</li><li>PEEK (Medical &amp; Industrial)</li><li>Delrin / Acetal</li>
+        </ul>
+      </div>
+      <div class="served-card">
+        <h3>Production Capacity &amp; Agility</h3>
+        <p>Lights-out automated multi-pallet cells facilitate concurrent setups without machine downtime, supporting high-mix, low-volume (HMLV) orders alongside high-volume annual contracts.</p>
+        <div class="kpi-row" style="display:flex;gap:12px">
+          <div class="kpi" style="background:var(--mist)"><div class="k">Shift Capacity</div><div class="v">24/7 Operations</div></div>
+          <div class="kpi" style="background:var(--mist)"><div class="k">Lead Times</div><div class="v">Rapid Run &lt; 10 Days</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALITY ============ -->
+<section class="section quality" id="quality">
+  <div class="wrap">
+    <div class="quality-intro">
+      <span class="eyebrow">QUALITY FIRST ARCHITECTURE</span>
+      <h2>Zero-Defect Quality Assurance &amp; Compliance Matrix</h2>
+      <p class="lead">Quality is designed into the process before a single tool engages the workpiece. Our certifications are backed by rigorous traceability records retained for a minimum of 10 years.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert">
+        <div class="seal"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div>
+        <h4>AS9100 Rev D</h4>
+        <p>Aviation &amp; Space Standard</p>
+        <span class="tag">CERT #AS-9821</span>
+      </div>
+      <div class="cert">
+        <div class="seal"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <h4>ISO 9001:2015</h4>
+        <p>Quality Management System</p>
+        <span class="tag">CERT #ISO-4190</span>
+      </div>
+      <div class="cert">
+        <div class="seal"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="8"/></svg></div>
+        <h4>ISO 13485:2016</h4>
+        <p>Medical Device Alignment</p>
+        <span class="tag">COMPLIANT SYSTEMS</span>
+      </div>
+      <div class="cert">
+        <div class="seal"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h4>ITAR Registered</h4>
+        <p>Defense Trade Controls</p>
+        <span class="tag">REG #M41098</span>
+      </div>
+      <div class="cert">
+        <div class="seal"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h4>Nadcap</h4>
+        <p>Special Processes Accredited</p>
+        <span class="tag">HEAT &amp; COAT</span>
+      </div>
+    </div>
+
+    <div class="protocol">
+      <h3>Verifiable 4-Stage Quality Verification Protocol</h3>
+      <div class="stages">
+        <div class="stage">
+          <span class="num">STAGE 01</span>
+          <h4>First Article Inspection (FAI)</h4>
+          <p>Full AS9102 FAIR reports prepared for all ballooned drawing dimensions before production ramp release.</p>
+        </div>
+        <div class="stage">
+          <span class="num">STAGE 02</span>
+          <h4>In-Process SPC Monitoring</h4>
+          <p>Continuous Statistical Process Control maintaining Cpk &gt; 1.67 on critical-to-quality (CTQ) designated characteristics.</p>
+        </div>
+        <div class="stage">
+          <span class="num">STAGE 03</span>
+          <h4>100% CMM Verification</h4>
+          <p>Automated multi-point inspection routines with digital cloud storage of raw point-cloud data and serialized tracking.</p>
+        </div>
+        <div class="stage">
+          <span class="num">STAGE 04</span>
+          <h4>Material Traceability &amp; MTRs</h4>
+          <p>Complete Material Test Reports (MTRs), melt origin certs, and lot-specific Certificates of Conformance (CoC) bundled with shipment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY ============ -->
+<section class="section case">
+  <div class="wrap">
+    <div class="case-card">
+      <div class="case-side">
+        <span class="eyebrow">FEATURED CASE STUDY</span>
+        <h3>Reducing Cycle Time by 38% for Next-Gen Aerospace Fluid Manifold</h3>
+        <div class="case-stats">
+          <div class="case-stat"><div class="k">Cycle Time Reduction</div><div class="v">38%</div></div>
+          <div class="case-stat"><div class="k">First-Pass Yield</div><div class="v">99.85%</div></div>
+          <div class="case-stat"><div class="k">Units Delivered On-Time</div><div class="v">4,200</div></div>
+        </div>
+        <div class="visual" role="img" aria-label="Aerospace fluid manifold"></div>
+        <a href="#quality" class="btn btn-outline" style="align-self:flex-start">Download Technical Case Study (PDF)</a>
+      </div>
+      <div class="case-body">
+        <div>
+          <h4>Customer Context</h4>
+          <p>Tier-1 Commercial Aviation Actuation Subcontractor supplying critical hydraulic subsystems for widebody aircraft flight control assemblies.</p>
+        </div>
+        <div>
+          <h4>The Business &amp; Engineering Challenge</h4>
+          <p>The component required a monolithic Inconel 718 hydraulic housing requiring ±0.0003" concentricity across 14 intersecting micro-bores. The legacy supplier suffered severe tool chatter, high scrap rates exceeding 14%, and chronic delivery delays.</p>
+        </div>
+        <div>
+          <h4>Vanguard's Engineering Solution</h4>
+          <p>Vanguard's engineering team re-engineered the CAM strategy into a single-setup 5-axis process utilizing custom PCD tooling, high-pressure cryogenic liquid nitrogen cooling, and harmonic vibration damping fixtures designed in-house.</p>
+        </div>
+        <div class="outcome">
+          <h4>Documented Manufacturing Outcome</h4>
+          <p>Machining cycle time dropped from 142 minutes to 88 minutes per piece. The program attained a 99.85% first-pass acceptance across all 4,200 delivered units with zero FAA conformity escapes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREERS & NEWS ============ -->
+<section class="section careers" id="careers">
+  <div class="wrap">
+    <div class="split">
+      <div class="left">
+        <span class="eyebrow">CAREERS AT VANGUARD</span>
+        <h3>Join Our Engineering Team</h3>
+        <p>Work in modern, fully climate-controlled facilities with state-of-the-art multi-axis machinery. We offer 401(k) matching, comprehensive health benefits, and sponsored Mastercam journeyman apprenticeships.</p>
+        <div class="role-list">
+          <a href="#careers" class="role">
+            <div><h5>Senior CNC Programmer (Mastercam / 5-Axis)</h5><small>Huntsville, AL • Full-Time • Aerospace Division</small></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#careers" class="role">
+            <div><h5>Quality Metrology Engineer (Zeiss CMM / Calypso)</h5><small>Huntsville, AL • Full-Time • Quality Assurance</small></div>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#careers" class="role">
+            <div><h5>5-Axis Setup Machinist (Night Shift Differential)</h5><small>Phoenix, AZ • Full-Time • Production Operations</small></div>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <a href="#careers" class="link" style="margin-top:8px">Explore All Open Careers →</a>
+      </div>
+
+      <div class="right">
+        <span class="eyebrow">CORPORATE UPDATES</span>
+        <h3>Latest Operations News</h3>
+        <p>Continuous facility reinvestment and verified compliance milestones across our manufacturing plants.</p>
+        <article class="news-item">
+          <span class="date">OCTOBER 14, 2024 • CAPABILITY EXPANSION</span>
+          <h4>Vanguard Installs Dual 5-Axis Automated Pallet Cell for High-Mix Production</h4>
+          <p>Addition of two new DMG MORI DMU 60 eVo machining centers linked to a 24-station Fastems pallet automation tower expands lights-out capacity by 35%.</p>
+        </article>
+        <article class="news-item">
+          <span class="date">SEPTEMBER 28, 2024 • QUALITY AUDIT</span>
+          <h4>Annual ISO 9001 &amp; AS9100 Surveillance Audit Completed with Zero Findings</h4>
+          <p>Independent registrar concludes comprehensive 4-day on-site surveillance audit of all Huntsville manufacturing facilities with zero non-conformances identified.</p>
+        </article>
+        <a href="#careers" class="link">View All Press Releases →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTATION FORM ============ -->
+<section class="section quote" id="quote">
+  <div class="wrap">
+    <div class="quote-grid">
+      <div class="quote-context">
+        <span class="eyebrow">ENGINEERING QUOTATION DESK</span>
+        <h2>Looking for the Right Manufacturing Partner?</h2>
+        <p class="lead">Submit your mechanical drawings, CAD models (STEP, IGES, DXF), and production specifications. Our senior engineering team reviews tolerances, machinability, and responds with a formal quote within 24 business hours.</p>
+
+        <div class="assure">
+          <div class="assure-item">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div><h4>24-Hour Engineering Turnaround</h4><p>DFM feedback and competitive tiered batch pricing delivered promptly.</p></div>
+          </div>
+          <div class="assure-item">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+            <div><h4>Rigorous IP &amp; ITAR Data Protection</h4><p>Encrypted file storage complying with NIST SP 800-171 &amp; CMMC standards.</p></div>
+          </div>
+          <div class="assure-item">
+            <div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+            <div><h4>Direct Technical Access</h4><p>Speak directly to manufacturing engineers, not commission intermediaries.</p></div>
+          </div>
+        </div>
+
+        <div class="hotline">
+          <span class="eyebrow">DIRECT TECHNICAL SALES HOTLINE</span>
+          <p>Call: <a href="tel:+18004927200">+1 (800) 492-7200</a><br>Email: <a href="mailto:rfq@vanguardprecision.com">rfq@vanguardprecision.com</a></p>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quoteForm" novalidate>
+        <h3>Request a Production Quote</h3>
+        <div class="field-grid">
+          <div class="field">
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input id="name" name="name" type="text" placeholder="e.g. Dr. Robert Chen" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Business Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" placeholder="e.g. r.chen@aerospace-oem.com" autocomplete="email" required>
+          </div>
+          <div class="field full">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="e.g. +1 (555) 000-0000" autocomplete="tel">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary submit" id="submitBtn">Submit Request for Quotation</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="logo-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 18 L12 4 L20 18 Z"/><path d="M9 18 L12 11 L15 18"/></svg></span>
+          <span class="brand-text"><strong>VANGUARD</strong><small>PRECISION DYNAMICS</small></span>
+        </a>
+        <p class="about">Vanguard Precision Dynamics is a tier-1 global manufacturer providing extreme-tolerance mechanical components, precision CNC machining, and additive industrial solutions for defense, aerospace, and biomedical sectors.</p>
+        <div class="certs">
+          <span><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>AS9100 Rev D &amp; ISO 9001:2015</span>
+          <span><svg class="icon" style="width:14px;height:14px" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>ITAR Registered | Nadcap Accredited</span>
+        </div>
+      </div>
+      <div>
+        <h4>Products &amp; Solutions</h4>
+        <ul>
+          <li><a href="#products">5-Axis CNC Milling</a></li>
+          <li><a href="#products">Swiss Precision Turning</a></li>
+          <li><a href="#products">Direct Metal Laser Sintering</a></li>
+          <li><a href="#products">Tooling, Jigs &amp; Fixtures</a></li>
+          <li><a href="#products">Surface Coating &amp; Anodizing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Industries Served</h4>
+        <ul>
+          <li><a href="#industries">Aerospace &amp; Defense</a></li>
+          <li><a href="#industries">Orthopedics &amp; Medical</a></li>
+          <li><a href="#industries">Semiconductor Tech</a></li>
+          <li><a href="#industries">Motorsport &amp; Automotive</a></li>
+          <li><a href="#industries">Space Systems &amp; Satellites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Corporate &amp; ESG</h4>
+        <ul>
+          <li><a href="#">Corporate Profile</a></li>
+          <li><a href="#">Investor Center</a></li>
+          <li><a href="#">ESG &amp; Sustainability</a></li>
+          <li><a href="#careers">Careers &amp; Apprenticeships</a></li>
+          <li><a href="#careers">Newsroom &amp; Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Global Headquarters</h4>
+        <address>Vanguard Precision Industrial Park<br>1040 Aerospace Boulevard, Suite 500<br>Huntsville, AL 35805 USA</address>
+        <p class="hq-direct"><strong>HQ Direct:</strong> +1 (800) 492-7200<br>Engineering: <a href="mailto:eng@vanguardprecision.com">eng@vanguardprecision.com</a><br>Client Desk: <a href="mailto:support@vanguardprecision.com">support@vanguardprecision.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Vanguard Precision Dynamics Inc. All rights reserved. Defense &amp; Commercial Systems.</span>
+      <div class="legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Supply Chain Transparency</a>
+        <a href="#">ITAR &amp; CMMC Compliance</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Mobile nav toggle ----
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('nav');
+  menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // ---- Quote form -> Google Apps Script ----
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXsj54Dbsy0OTvRXx5FLFPjKFSKN7PzqAQS1h_pCXba7KPOsmOyBAjvMoiJ_K5lwE_/exec";
+
+  const form = document.getElementById('quoteForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusEl = document.getElementById('formStatus');
+
+  function showSuccess() {
+    statusEl.className = 'form-status ok';
+    statusEl.textContent = 'Thank you. Your request has been received and an engineer will respond within 24 business hours.';
+    form.reset();
+    submitBtn.disabled = false;
+  }
+
+  function showError() {
+    statusEl.className = 'form-status err';
+    statusEl.textContent = 'Something went wrong. Please try again or call +1 (800) 492-7200.';
+    submitBtn.disabled = false;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !email) {
+      statusEl.className = 'form-status err';
+      statusEl.textContent = 'Please enter your name and business email.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.className = 'form-status';
+    statusEl.textContent = 'Sending...';
+
+    const url = SCRIPT_URL + "?" + new URLSearchParams({ name, email, phone });
+
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(() => showSuccess())
+      .catch(() => showError());
+  });
+</script>
+</body>
+</html>
